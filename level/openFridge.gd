@@ -1,6 +1,5 @@
 extends Area2D
 
-var is_Fridge_Open = false;
 var i = 0;
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,23 +17,19 @@ func _ready():
 
 
 func _on_openFridge_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.is_pressed() && shape_idx == 1 && !is_Fridge_Open:
-		is_Fridge_Open = true;
-		$ouverture2.visible = false;
+	if event is InputEventMouseButton && event.is_pressed() && shape_idx != 1 && !get_parent().is_Fridge_Open:
+		get_parent().change_Fridge_State();
+		$ouvertureSprite.visible = false;
 	#var bulle = load("res://Controller/bulle_Plateforme.tscn").instance() #pour load une scene
 		print("ouverture");
-		print(i);
-		i = i+1
 pass # Replace with function body.
 
 
 func _on_closeFridge_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.is_pressed() && shape_idx != 1 && is_Fridge_Open:
-		is_Fridge_Open = false;
-		$ouverture2.visible = true;
+	if event is InputEventMouseButton && event.is_pressed() && shape_idx == 1 && get_parent().is_Fridge_Open:
+		get_parent().change_Fridge_State();
+		$ouvertureSprite.visible = true;
 		#var bulle = load("res://Controller/bulle_Plateforme.tscn").instance() #pour load une scene
 		print("fermeture");
-		print(i);
-		i = i+1
 	pass # Replace with function body.
 
