@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 2448 2448"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="asteroid_3.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     width="48px"
+     scale-x="51"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="5.5242717"
+     inkscape:cx="21.72232"
+     inkscape:cy="23.894552"
+     inkscape:window-width="1555"
+     inkscape:window-height="539"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="1224,1224"
+       orientation="-1,0"
+       id="guide824"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path850"
+       style="fill:#795548;stroke:#3e2723;stroke-width:97.7547;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:transform-center-y="-112.1239"
+       d="M 1282.2178,52.024606 2335.5944,535.70194 2395.893,1513.3995 1445.7014,2398.1363 749.98499,2362.7869 49.781201,1273.4436 104.64169,395.03931 Z"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:transform-center-x="-6.3184087e-06" />
+  </g>
+</svg>
