@@ -1,9 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ressources/chambrev1.png" type="Texture" id=1]
+[ext_resource path="res://level/vaisseau.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 80, 50 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="vaisseau" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vaisseau"]
+position = Vector2( 230, 290 )
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="vaisseau" to="vaisseau" method="_on_vaisseau_input_event"]
