@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chambrelune.png-c2b0cad8aa2c1fbe3f3cc963522dc5f3.stex"
+path="res://.import/oeufs.png-7da48327794d9838dcbfd8d806584bc8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Chambrelune.png"
-dest_files=[ "res://.import/Chambrelune.png-c2b0cad8aa2c1fbe3f3cc963522dc5f3.stex" ]
+source_file="res://ressources/dinette/oeufs.png"
+dest_files=[ "res://.import/oeufs.png-7da48327794d9838dcbfd8d806584bc8.stex" ]
 
 [params]
 
