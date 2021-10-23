@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chambrev1.png-05a3cec0f13e366a5c0167ec91bdb2d2.stex"
+path="res://.import/citron.png-410e6b7b1c5c71eb57b3199f387d046e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/chambrev1.png"
-dest_files=[ "res://.import/chambrev1.png-05a3cec0f13e366a5c0167ec91bdb2d2.stex" ]
+source_file="res://ressources/dinette/citron.png"
+dest_files=[ "res://.import/citron.png-410e6b7b1c5c71eb57b3199f387d046e.stex" ]
 
 [params]
 

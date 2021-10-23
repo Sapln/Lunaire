@@ -1,6 +1,6 @@
 extends Area2D
 
-var i = 0;
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -16,12 +16,6 @@ func _ready():
 #	pass
 
 
-func _on_vaisseau_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.is_pressed():
-		#var bulle = load("res://Controller/bulle_Plateforme.tscn").instance() #pour load une scene
-		print("clic vaisseau");
-		print(i);
-		i = i+1
+func _on_choix_carotte_input_event(viewport, event, shape_idx):
+	
 	pass # Replace with function body.
-
-

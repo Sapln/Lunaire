@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/comodeFermee.png-2760014d8d99bf941eb75644c58e0d44.stex"
+path="res://.import/frigoOuvert.png-6307ee7551fae7a870a97662ee2bebac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/comodeFermee.png"
-dest_files=[ "res://.import/comodeFermee.png-2760014d8d99bf941eb75644c58e0d44.stex" ]
+source_file="res://ressources/dinette/frigoOuvert.png"
+dest_files=[ "res://.import/frigoOuvert.png-6307ee7551fae7a870a97662ee2bebac.stex" ]
 
 [params]
 
