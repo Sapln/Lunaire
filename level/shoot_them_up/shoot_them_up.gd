@@ -1,6 +1,6 @@
 extends Node2D
 
-var asteroid = preload("res://level/shoot_them_up/asteroid.tscn")
+var asteroid = preload("res://level/shoot_them_up/elements/asteroid.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
