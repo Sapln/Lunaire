@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Monstres.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hud.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0.0788918, -0.173555, 0, 0, 0, 0, 1024.18, 0.183537, 0, 0, 0, 0, 1023.88, 599.938, 0, 0, 0, 0, 0.121681, 599.789, 0, 0, 0, 0, 0.0788918, -0.173555 )
+}
+
+[node name="World" type="Node"]
+script = ExtResource( 1 )
+Monstres = ExtResource( 3 )
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 30, 560 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2( 0.0788918, -0.173555 )
+rotation = 0.000348702
+
+[node name="Button" type="Button" parent="."]
+margin_right = 57.0
+margin_bottom = 20.0
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hud" parent="." instance=ExtResource( 4 )]
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="start_game" from="Hud" to="." method="new_game"]
