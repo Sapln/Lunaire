@@ -1,5 +1,5 @@
 extends Node2D
-enum {CAROTTE,LAIT,OEUF,TOMATE,ORANGE,CITRON,POISSON,VIANDE,CUISSE,COURGETTE,OIGNON,FROMAGE,SALADE,CHAMPI}
+enum {CAROTTE,CHAMPI,CITRON,COURGETTE,CUISSE}
 
 var recette = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var is_Fridge_Open = false;
@@ -31,3 +31,6 @@ func _on_poele_input_event(viewport, event, shape_idx):
 			print(i);
 		recette = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	pass # Replace with function body.
+
+
+
