@@ -18,7 +18,6 @@ var bool_attack
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
-	pass # Replace with function body.
 
 func _process(delta):
 	velocity.x=0
@@ -49,8 +48,10 @@ func _process(delta):
 		$AnimatedSprite.flip_h = velocity.x < 0
 		if velocity.x<0:
 			$Weapon/HitBox.position.x= -55
+			$Weapon/AnimatedSprite.position.x= -55
 		if velocity.x>0 :
 			$Weapon/HitBox.position.x=55
+			$Weapon/AnimatedSprite.position.x= 55
 	elif velocity.y != 0:
 		$AnimatedSprite.animation = "sauter"
 
