@@ -14,6 +14,9 @@ func _ready():
 
 func get_width():
 	return self.texture.get_width()
+	
+func get_height():
+	return self.texture.get_height()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

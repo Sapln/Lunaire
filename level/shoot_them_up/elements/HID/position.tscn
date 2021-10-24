@@ -6,19 +6,13 @@
 
 [node name="Position" type="Node2D"]
 script = ExtResource( 2 )
-height = 500.0
-achievement = 0.58
 
 [node name="Remaining" parent="." instance=ExtResource( 3 )]
-position = Vector2( 8, 8 )
 stroke_color = Color( 0.827451, 0.184314, 0.184314, 1 )
 fill_color = Color( 0.956863, 0.262745, 0.211765, 1 )
-size = Vector2( 16, 64 )
 
 [node name="Travalled" parent="." instance=ExtResource( 3 )]
-position = Vector2( 8, 72 )
 stroke_color = Color( 0.329412, 0.431373, 0.478431, 1 )
 fill_color = Color( 0.470588, 0.564706, 0.611765, 1 )
-size = Vector2( 16, 64 )
 
 [node name="Cursor" parent="." instance=ExtResource( 1 )]
