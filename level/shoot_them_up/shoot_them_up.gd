@@ -8,11 +8,6 @@ const SPAWN_DELAY = 0.5
 
 const LEVEL_LENGTH = 180
 
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var last_spawn = 0
 var timer = 0
 var background = null
@@ -76,3 +71,6 @@ func _process(delta):
 		add_child(
 			prepare_element(Asteroid, vrect, SPACESHIP_SPEED)
 		)
+
+func game_over():
+	$AudioStreamPlayer.stop()
