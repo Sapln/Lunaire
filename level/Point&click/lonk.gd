@@ -24,6 +24,6 @@ func _on_lonk_input_event(viewport, event, shape_idx):
 		for i in node.get_children():
 			node.remove_child(i)
 			i.queue_free()
-		print("lonk")
+		node.add_child(load("res://RPG/World.tscn").instance())
 		node.add_child(load("res://level/boutonRetour.tscn").instance())
 	pass # Replace with function body.

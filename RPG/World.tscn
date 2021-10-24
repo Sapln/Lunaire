@@ -1,0 +1,156 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://RPG/World.gd" type="Script" id=1]
+[ext_resource path="res://RPG/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://RPG/Monstres.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RPG/Hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://RPG/assets/kazoo Zelda.ogg" type="AudioStream" id=5]
+[ext_resource path="res://RPG/terminalmontages-famous-explotion-sound-effect.mp3" type="AudioStream" id=6]
+[ext_resource path="res://RPG/Terre Dessin.png" type="Texture" id=7]
+[ext_resource path="res://RPG/Lune Dessin.png" type="Texture" id=8]
+[ext_resource path="res://RPG/Lonk1découp.png" type="Texture" id=9]
+[ext_resource path="res://RPG/Lonk2découp.png" type="Texture" id=10]
+[ext_resource path="res://RPG/Poyo.wav" type="AudioStream" id=11]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 1024, 600 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "AnimLonk"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 450 ), Vector2( 1000, 450 ), Vector2( 0, 450 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4, 7.6, 7.8, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[node name="World" type="Node"]
+script = ExtResource( 1 )
+Monstres = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Parallax"]
+position = Vector2( 512.125, 298.396 )
+scale = Vector2( 0.724542, 0.547669 )
+texture = ExtResource( 7 )
+
+[node name="Parallax2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Parallax2"]
+position = Vector2( 512.578, 518.339 )
+scale = Vector2( 1.46758, 0.892736 )
+texture = ExtResource( 8 )
+
+[node name="Parallax3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Parallax3"]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2( 0, 600 )
+rotation = -1.5708
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 30, 549 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 965.0
+margin_right = 1022.0
+margin_bottom = 20.0
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hud" parent="." instance=ExtResource( 4 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 1.0
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="KirboDie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = 3.0
+
+[node name="Lonk" type="KinematicBody2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lonk"]
+anims/AnimLonk = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Lonk"]
+position = Vector2( 0, 450 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 3 )
+animation = "run"
+flip_h = true
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="start_game" from="Hud" to="." method="new_game"]
