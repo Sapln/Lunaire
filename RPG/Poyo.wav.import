@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Poyo.wav-a3732fdd5f1906741596596d2826b3cc.sample"
+
+[deps]
+
+source_file="res://Poyo.wav"
+dest_files=[ "res://.import/Poyo.wav-a3732fdd5f1906741596596d2826b3cc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
