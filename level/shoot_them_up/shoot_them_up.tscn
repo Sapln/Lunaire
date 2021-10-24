@@ -26,5 +26,6 @@ offset = Vector2( 0, -1 )
 stream = ExtResource( 3 )
 
 [node name="Vaisseau" parent="." instance=ExtResource( 4 )]
+position = Vector2( 500, 500 )
 
 [connection signal="hit" from="Vaisseau" to="." method="game_over"]

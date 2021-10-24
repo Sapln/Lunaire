@@ -8,6 +8,8 @@ const SPAWN_DELAY = 0.5
 
 const LEVEL_LENGTH = 180
 
+var vie=3
+var booleen=1
 var last_spawn = 0
 var timer = 0
 var background = null
@@ -66,11 +68,15 @@ func _process(delta):
 	
 	update_background_geometry(vrect)
 	
-	if last_spawn >= SPAWN_DELAY:
+	if last_spawn >= SPAWN_DELAY and booleen!=0:
 		last_spawn = 0
 		add_child(
 			prepare_element(Asteroid, vrect, SPACESHIP_SPEED)
 		)
 
 func game_over():
-	$AudioStreamPlayer.stop()
+	vie-=1
+	if vie<1:
+		$AudioStreamPlayer.stop()
+		get_tree().call_group("asteroide", "queue_free")
+		booleen=0
