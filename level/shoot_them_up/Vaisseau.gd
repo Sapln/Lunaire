@@ -34,11 +34,13 @@ func _process(delta):
 
 func start(pos):
 	position = pos
-	show()
 	$CollisionShape2D.disabled = false
 
 
 func _on_Vaisseau_body_entered(body):
+	var vie =get_parent().vie
 	hide()
 	emit_signal("hit")
-	$CollisionShape2D.set_deferred("disabled", true)
+	if vie>0:
+		yield(get_tree().create_timer(1),"timeout")
+		show()

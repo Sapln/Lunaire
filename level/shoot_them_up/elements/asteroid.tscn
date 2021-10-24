@@ -2,7 +2,9 @@
 
 [ext_resource path="res://level/shoot_them_up/elements/asteroid.gd" type="Script" id=1]
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=[
+"asteroide",
+]]
 gravity_scale = 0.0
 script = ExtResource( 1 )
 

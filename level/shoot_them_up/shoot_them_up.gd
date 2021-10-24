@@ -8,9 +8,13 @@ const SPAWN_DELAY = 0.5
 
 const LEVEL_LENGTH = 180
 
+var vie=3
+var booleen=1
 var last_spawn = 0
 var timer = 0
 var background = null
+var is_finished = false
+var _timer = null
 
 func prepare_element(element, vrect, spaceship_speed):	
 	var node = element.instance()
@@ -45,10 +49,15 @@ func _ready():
 	$AudioStreamPlayer.play()
 	var vrect = get_viewport_rect()
 	var texture = GradientTexture.new()
-	
 	background = get_node("Background")
-		
 	update_background_geometry(vrect)
+	_timer = Timer.new()
+	add_child(_timer)
+	_timer.connect("timeout", self, "_on_Timer_timeout")
+	_timer.set_wait_time(1.0)
+	_timer.set_one_shot(false) # Make sure it loops
+	_timer.start()
+
 	
 func update_background_geometry(vrect):
 	background.position = vrect.position
@@ -66,11 +75,23 @@ func _process(delta):
 	
 	update_background_geometry(vrect)
 	
-	if last_spawn >= SPAWN_DELAY:
+	if last_spawn >= SPAWN_DELAY and booleen!=0:
 		last_spawn = 0
 		add_child(
 			prepare_element(Asteroid, vrect, SPACESHIP_SPEED)
 		)
 
+
+
+func _on_Timer_timeout():
+	if($moon.position.y<170):
+		$moon.position.y +=2
+	else:
+		$finished.visible = true
+    
 func game_over():
-	$AudioStreamPlayer.stop()
+	vie-=1
+	if vie<1:
+		$AudioStreamPlayer.stop()
+		get_tree().call_group("asteroide", "queue_free")
+		booleen=0
