@@ -86,6 +86,7 @@ func _process(delta):
 func _on_Timer_timeout():
 	if($moon.position.y<170):
 		$moon.position.y +=2
+		$HID/Position.achievement +=0.1
 	else:
 		$finished.visible = true
 	
