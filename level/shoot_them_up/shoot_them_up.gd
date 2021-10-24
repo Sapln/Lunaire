@@ -47,7 +47,7 @@ func prepare_element(element, vrect, spaceship_speed):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	$AudioStreamPlayer2D.play()
+	$AudioStreamPlayer.play()
 	var vrect = get_viewport_rect()
 	var texture = GradientTexture.new()
 	
