@@ -13,6 +13,7 @@ func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	$Hud/StartButton.hide()
 	$Hud.update_score(score)
 	$Hud.show_message("Get Ready")
 
@@ -54,4 +55,8 @@ func game_over():
 	get_tree().call_group("mobs", "queue_free")
 
 func _on_Button_button_down():
-	game_over()
+	$Music.stop()
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	get_tree().call_group("mobs", "queue_free")
+	new_game()

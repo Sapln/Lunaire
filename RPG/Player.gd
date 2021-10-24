@@ -26,12 +26,12 @@ func _process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= speed
 	
-	if position.y>558:
+	if position.y>548:
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = -jump_speed
 		else:
 			velocity.y=0
-	if position.y<400:
+	if position.y<390:
 		velocity.y= gravite*delta
 		velocity.y = velocity.y * jump_speed
 

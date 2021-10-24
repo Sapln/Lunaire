@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/terminalmontages-famous-explotion-sound-effect.mp3-7b31e6c6e30c0c39ec5412f3fac725f5.mp3str"
+
+[deps]
+
+source_file="res://terminalmontages-famous-explotion-sound-effect.mp3"
+dest_files=[ "res://.import/terminalmontages-famous-explotion-sound-effect.mp3-7b31e6c6e30c0c39ec5412f3fac725f5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -31,14 +31,14 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 26.8285
-height = 14.1814
+radius = 37.8832
+height = 26.5587
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 510.998, 302.302 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 27.1709, 33.8495 )
+extents = Vector2( 38.5327, 49.3787 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "New Anim"
@@ -84,7 +84,7 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.14, 0.13 )
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "sauter"
 
@@ -103,7 +103,7 @@ script = ExtResource( 6 )
 [node name="HitBox" type="CollisionShape2D" parent="Weapon"]
 modulate = Color( 1, 0, 0, 1 )
 self_modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 55, 0 )
+position = Vector2( 70, 0 )
 shape = SubResource( 4 )
 disabled = true
 
@@ -111,8 +111,8 @@ disabled = true
 "anims/New Anim" = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Weapon"]
-position = Vector2( 55, 0 )
-scale = Vector2( 0.13, 0.14 )
+position = Vector2( 70, 0 )
+scale = Vector2( 0.15, 0.19 )
 frames = SubResource( 6 )
 animation = "ZoneDamage"
 
