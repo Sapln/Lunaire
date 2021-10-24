@@ -8,11 +8,12 @@ const SPRITE_NUM = 3 # asteroid_1/asteroid_2/asteroid_3
 const SPRITE_PREFIX = "res://ressources/shoot_them_up/asteroid_"
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	linear_damp = 0
-	
+func _ready():	
 	var image = Image.new()
 	var texture = ImageTexture.new()
+	var shape = CircleShape2D.new()
+	
+	linear_damp = 0
 		
 	image.load(
 		SPRITE_PREFIX + str(
@@ -23,18 +24,23 @@ func _ready():
 	texture.create_from_image(image)
 	
 	get_node("CollisionShape2D/Sprite").texture = texture
-	get_node("CollisionShape2D").shape.radius = image.get_width()/2
+	shape.radius = image.get_width()/2
+	
+	get_node("CollisionShape2D").shape = shape
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var vrect = get_viewport_rect()
-	var rad = get_node("CollisionShape2D").shape.radius
-	position.x = (
-		int(position.x + rad - vrect.position.x) %
-		int(vrect.size.x - vrect.position.x + 2*rad)
-	) - rad + vrect.position.x 
-	
 	get_node("CollisionShape2D/Sprite").rotation_degrees += speed * delta
 	
+	var vrect = get_viewport_rect()
+	var rad = get_node("CollisionShape2D").shape.radius
+	
+	if (
+		position.x < vrect.position.x - rad or
+		position.y < vrect.position.y - rad or
+		position.x > vrect.position.x + vrect.size.x + rad or
+		position.y > vrect.position.y + vrect.size.y + rad
+	):
+		queue_free()
 	
