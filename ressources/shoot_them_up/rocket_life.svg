@@ -2,8 +2,8 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="32"
-   height="32"
+   width="48"
+   height="48"
    viewBox="0 0 24 24"
    version="1.1"
    id="svg5"
@@ -26,8 +26,8 @@
      units="px"
      width="24px"
      inkscape:zoom="5.5242717"
-     inkscape:cx="25.614236"
-     inkscape:cy="26.428823"
+     inkscape:cx="24.709139"
+     inkscape:cy="9.5940249"
      inkscape:window-width="1366"
      inkscape:window-height="691"
      inkscape:window-x="0"
@@ -101,7 +101,7 @@
        sodipodi:nodetypes="cccc" />
     <path
        id="path893"
-       style="fill:#eceff1;stroke:#90a4ae;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:#eceff1;stroke:#90a4ae;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="M 22,2 C 12,2 2,17.417969 2,17.417969 L 6.5820312,22 C 6.5820312,22 22,12 22,2 Z"
        sodipodi:nodetypes="cccc" />
     <path
