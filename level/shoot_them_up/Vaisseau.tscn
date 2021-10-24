@@ -3,7 +3,7 @@
 [ext_resource path="res://level/shoot_them_up/Vaisseau.gd" type="Script" id=1]
 [ext_resource path="res://ressources/shoot_them_up/rocket_position.svg" type="Texture" id=2]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -11,7 +11,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 12.1815
 height = 27.4527
 
@@ -19,11 +19,11 @@ height = 27.4527
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "vol"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.187195, -16.4447 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Vaisseau_body_entered"]

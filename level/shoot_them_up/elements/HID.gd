@@ -27,7 +27,7 @@ func _process(delta):
 func add_life():
 	$LifeCounter.add_life()
 
-func remve_life():
+func remove_life():
 	$LifeCounter.remove_life()
 
 func set_rocket_position(pos):
