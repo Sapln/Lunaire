@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const SPEED_MIN = 0.01 # In °/s
+const SPEED_MIN = 0.10 # In °/s
 const SPEED_MAX = 50.0 # In °/s
 var speed = 0
 

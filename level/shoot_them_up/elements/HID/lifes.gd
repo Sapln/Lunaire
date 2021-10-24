@@ -5,7 +5,7 @@ const LifeSprite = preload("res://level/shoot_them_up/elements/HID/life.gd")
 const FONT_PATH = "res://ressources/Xolonium-Regular.ttf"
 
 const DEFAULT_LIFES = 3
-const MAX_LIFES = 3
+const MAX_LIFES = 4
 
 const SPRITE_MARGIN = 2
 
@@ -27,10 +27,10 @@ func _ready():
 	counter_sprite.position.x = SPRITE_MARGIN
 	counter_sprite.position.y = SPRITE_MARGIN
 	counter_sprite.centered = false
+	counter_sprite.visible = false
 	
 	counter_text =  get_node("Counter")
 	
-	counter_sprite.visible = false
 	counter_text.visible = false
 	
 	add_child(counter_sprite)
@@ -72,7 +72,7 @@ func refresh():
 			i.visible = false
 		counter_sprite.visible = true
 		counter_text.visible = true
-		counter_text.text = "x%d" % count
+		counter_text.text = "x %d" % count
 
 func add_life():
 	count += 1
@@ -90,11 +90,3 @@ func is_dead():
 func _process(delta):
 	if need_init: init()
 	if not updated: refresh()
-
-
-func _on_Area2D_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
-			add_life()
-		elif event.button_index == BUTTON_RIGHT and event.pressed:
-			remove_life()

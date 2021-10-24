@@ -1,6 +1,7 @@
 extends Node2D
 
 const Asteroid = preload("res://level/shoot_them_up/elements/asteroid.tscn")
+const LifeCounter = preload("res://level/shoot_them_up/elements/HID/lifes.tscn")
 
 const SPACESHIP_SPEED = 300
 const SPAWN_DELAY = 0.5
@@ -51,19 +52,7 @@ func _ready():
 	var texture = GradientTexture.new()
 	
 	background = get_node("Background")
-	background.offset.y = -1
-	background.offset.x = 0
-	background.centered = false
-	background.rotation_degrees = 90
-	background.scale.x = 1
-	
-	texture.gradient = Gradient.new()
-	
-	texture.gradient.add_point(0, Color.black)
-	texture.gradient.add_point(1, Color.darkblue)
-	
-	background.texture = texture
-	
+		
 	update_background_geometry(vrect)
 	
 func update_background_geometry(vrect):

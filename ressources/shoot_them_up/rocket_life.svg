@@ -2,8 +2,8 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="24"
-   height="24"
+   width="32"
+   height="32"
    viewBox="0 0 24 24"
    version="1.1"
    id="svg5"
@@ -25,9 +25,9 @@
      showgrid="false"
      units="px"
      width="24px"
-     inkscape:zoom="15.625"
-     inkscape:cx="12"
-     inkscape:cy="11.968"
+     inkscape:zoom="5.5242717"
+     inkscape:cx="25.614236"
+     inkscape:cy="26.428823"
      inkscape:window-width="1366"
      inkscape:window-height="691"
      inkscape:window-x="0"
@@ -38,7 +38,8 @@
      inkscape:guide-bbox="true"
      inkscape:snap-page="true"
      inkscape:object-paths="true"
-     inkscape:snap-intersection-paths="true">
+     inkscape:snap-intersection-paths="true"
+     scale-x="0.75">
     <sodipodi:guide
        position="12,12"
        orientation="0.70710678,-0.70710678"
