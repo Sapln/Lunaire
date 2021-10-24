@@ -9,6 +9,7 @@ func _ready():
 
 func new_game():
 	$Music.play()
+	$Lonk/AnimationPlayer.play("AnimLonk")
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
