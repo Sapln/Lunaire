@@ -21,5 +21,5 @@ func _on_Button_pressed():
 	for i in node.get_children():
 		node.remove_child(i)
 		i.queue_free()
-	node.add_child(load("res://level/point&click/point&click.tscn").instance())
+	node.add_child(load("res://level/Point&click/point&click.tscn").instance())
 	pass # Replace with function body.
