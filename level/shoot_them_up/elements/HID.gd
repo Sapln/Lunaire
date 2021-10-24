@@ -23,3 +23,12 @@ func _process(delta):
 	#$Position.set_height(viewport.size.y - 4*cursor_margins)
 	$Position.set_height(viewport.size.y - $Position.get_total_margin())
 	$Position.position.x = viewport.size.x - $Position.get_width()
+
+func add_life():
+	$LifeCounter.add_life()
+
+func remve_life():
+	$LifeCounter.remove_life()
+
+func set_rocket_position(pos):
+	$Position.set_achievement(pos)
