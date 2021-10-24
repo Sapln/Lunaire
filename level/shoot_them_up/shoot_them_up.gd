@@ -16,6 +16,8 @@ const LEVEL_LENGTH = 180
 var last_spawn = 0
 var timer = 0
 var background = null
+var is_finished = false
+var _timer = null
 
 func prepare_element(element, vrect, spaceship_speed):	
 	var node = element.instance()
@@ -50,10 +52,15 @@ func _ready():
 	$AudioStreamPlayer.play()
 	var vrect = get_viewport_rect()
 	var texture = GradientTexture.new()
-	
 	background = get_node("Background")
-		
 	update_background_geometry(vrect)
+	_timer = Timer.new()
+	add_child(_timer)
+	_timer.connect("timeout", self, "_on_Timer_timeout")
+	_timer.set_wait_time(1.0)
+	_timer.set_one_shot(false) # Make sure it loops
+	_timer.start()
+
 	
 func update_background_geometry(vrect):
 	background.position = vrect.position
@@ -76,3 +83,12 @@ func _process(delta):
 		add_child(
 			prepare_element(Asteroid, vrect, SPACESHIP_SPEED)
 		)
+
+
+
+
+func _on_Timer_timeout():
+	if($moon.position.y<170):
+		$moon.position.y +=2
+	else:
+		$finished.visible = true
