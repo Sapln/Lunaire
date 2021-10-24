@@ -88,7 +88,7 @@ func _on_Timer_timeout():
 		$moon.position.y +=2
 	else:
 		$finished.visible = true
-    
+	
 func game_over():
 	vie-=1
 	if vie<1:
