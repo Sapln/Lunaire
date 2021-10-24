@@ -86,7 +86,10 @@ func remove_life():
 func is_dead():
 	return count == 0
 
+func get_height():
+	return counter_text.rect_size.y + 2*SPRITE_MARGIN
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta):	
 	if need_init: init()
 	if not updated: refresh()
