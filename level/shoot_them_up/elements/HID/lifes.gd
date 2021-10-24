@@ -1,6 +1,5 @@
 extends Node2D
 
-const Counter = preload("res://level/shoot_them_up/elements/HID/counter.gd")
 const LifeSprite = preload("res://level/shoot_them_up/elements/HID/life.gd")
 
 const FONT_PATH = "res://ressources/Xolonium-Regular.ttf"
