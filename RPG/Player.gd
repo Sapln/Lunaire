@@ -8,6 +8,7 @@ export var jump_speed=500
 export var gravite =60
 var screen_size  # Size of the game window.
 var velocity = Vector2.ZERO  # The player's movement vector.
+var bool_attack
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -45,8 +46,11 @@ func _process(delta):
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "marcher"
 		$AnimatedSprite.flip_v = false
-		# See the note below about boolean assignment
 		$AnimatedSprite.flip_h = velocity.x < 0
+		if velocity.x<0:
+			$Weapon/HitBox.position.x= -55
+		if velocity.x>0 :
+			$Weapon/HitBox.position.x=55
 	elif velocity.y != 0:
 		$AnimatedSprite.animation = "sauter"
 
@@ -62,5 +66,7 @@ func start(pos):
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Attack"):
+		#bool_attack=1
 		weapon.attack()
+		#bool_attack=0
 
