@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Lunaire"
-run/main_scene="res://level/point&click.tscn"
+run/main_scene="res://level/Point&click/point&click.tscn"
 config/icon="res://icon.png"
 
 [rendering]
