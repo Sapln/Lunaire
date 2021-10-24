@@ -8,6 +8,7 @@ func _ready():
 	randomize()
 
 func new_game():
+	$Music.play()
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
@@ -41,9 +42,12 @@ func _on_MobTimer_timeout():
 
 
 func game_over():
+	$Music.stop()
+	$Death.play()
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$Hud.show_game_over()
+	get_tree().call_group("mobs", "queue_free")
 
 func _on_Button_button_down():
-	new_game()
+	game_over()

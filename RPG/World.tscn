@@ -1,18 +1,49 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Monstres.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/dodge_assets/dodge_assets/art/House In a Forest Loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/dodge_assets/dodge_assets/art/gameover.wav" type="AudioStream" id=6]
+[ext_resource path="res://Terre Dessin.png" type="Texture" id=7]
+[ext_resource path="res://Lune Dessin.png" type="Texture" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0.0788918, -0.173555, 0, 0, 0, 0, 1024.18, 0.183537, 0, 0, 0, 0, 1023.88, 599.938, 0, 0, 0, 0, 0.121681, 599.789, 0, 0, 0, 0, 0.0788918, -0.173555 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 1024, 600 )
 }
 
 [node name="World" type="Node"]
 script = ExtResource( 1 )
 Monstres = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Parallax"]
+position = Vector2( 512.125, 298.396 )
+scale = Vector2( 0.724542, 0.547669 )
+texture = ExtResource( 7 )
+
+[node name="Parallax2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Parallax2"]
+position = Vector2( 512.578, 518.339 )
+scale = Vector2( 1.46758, 0.892736 )
+texture = ExtResource( 8 )
+
+[node name="Parallax3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Parallax3"]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2( 0, 600 )
+rotation = -1.5708
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -31,13 +62,6 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-[node name="MobPath" type="Path2D" parent="."]
-curve = SubResource( 1 )
-
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( 0.0788918, -0.173555 )
-rotation = 0.000348702
-
 [node name="Button" type="Button" parent="."]
 margin_right = 57.0
 margin_bottom = 20.0
@@ -47,6 +71,12 @@ __meta__ = {
 }
 
 [node name="Hud" parent="." instance=ExtResource( 4 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

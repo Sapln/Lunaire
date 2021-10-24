@@ -1,6 +1,7 @@
 extends Area2D
 
 signal hit
+onready var weapon=$Weapon
 
 export var speed = 200  # How fast the player will move (pixels/sec).
 export var jump_speed=500
@@ -59,4 +60,7 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 
+func _unhandled_input(event):
+	if event.is_action_pressed("Attack"):
+		weapon.attack()
 
