@@ -47,6 +47,9 @@ func get_width():
 func get_height():
 	return 2*(margin + _ycorr) + height
 
+func get_total_margin():
+	return 2*(margin + _ycorr)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not _init: init()
