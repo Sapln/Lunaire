@@ -15,6 +15,8 @@ func init():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print("HID")
+	
 	if not init: init()
 	var viewport = get_viewport()
 	
@@ -27,7 +29,7 @@ func _process(delta):
 func add_life():
 	$LifeCounter.add_life()
 
-func remove_life():
+func remve_life():
 	$LifeCounter.remove_life()
 
 func set_rocket_position(pos):

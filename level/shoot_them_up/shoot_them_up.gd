@@ -71,6 +71,8 @@ func _process(delta):
 	last_spawn += delta
 	timer += delta
 	
+	$HID/Position.achievement =  timer / LEVEL_LENGTH
+	
 	var vrect = get_viewport_rect()
 	
 	update_background_geometry(vrect)
@@ -86,13 +88,11 @@ func _process(delta):
 func _on_Timer_timeout():
 	if($moon.position.y<170):
 		$moon.position.y +=2
-		$HID/Position.achievement +=0.1
 	else:
 		$finished.visible = true
 	
 func game_over():
 	vie-=1
-	$HID.remove_life()
 	if vie<1:
 		$AudioStreamPlayer.stop()
 		get_tree().call_group("asteroide", "queue_free")

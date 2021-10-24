@@ -11,6 +11,7 @@ var _pos = 0
 var _width = 0
 var _init = false
 var _ycorr = 0
+var _last_ach = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -52,9 +53,10 @@ func get_total_margin():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print("position")
 	if not _init: init()
 	
-	if _last_height != height:
+	if _last_ach != achievement or _last_height != height:
 		_last_height = height
 		
 		_pos = height * achievement
