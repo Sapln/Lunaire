@@ -250,6 +250,7 @@ position = Vector2( 207, 315 )
 shape = SubResource( 4 )
 
 [node name="openFridge" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 3 )
 
 [node name="ouverture" type="CollisionShape2D" parent="openFridge"]
