@@ -19,9 +19,7 @@ func _ready():
 func _on_vaisseau_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton && event.is_pressed():
 		#var bulle = load("res://Controller/bulle_Plateforme.tscn").instance() #pour load une scene
-		print("clic vaisseau");
-		print(i);
-		i = i+1
+		get_tree().get_root().add_child(load("res://level/shoot_them_up/shoot_them_up.tscn").instance())
 	pass # Replace with function body.
 
 
