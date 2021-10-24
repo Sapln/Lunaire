@@ -9,10 +9,8 @@ func _ready():
 	$AnimatedSprite.animation = "voler"
 
 func _on_VisibilityNotifier2D_screen_exited():
-	$KirboDie.play()
-	yield(get_tree().create_timer(1),"timeout")
 	queue_free()
 
 func handle_hit():
-	print("gnéééééé")
+	get_parent().kirbo_die()
 	queue_free()

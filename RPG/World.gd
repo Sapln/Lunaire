@@ -16,6 +16,9 @@ func new_game():
 	$Hud.update_score(score)
 	$Hud.show_message("Get Ready")
 
+func kirbo_die():
+	$KirboDie.play()
+
 func _on_StartTimer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start()

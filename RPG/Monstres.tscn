@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/dodge_assets/dodge_assets/art/enemySwimming_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/dodge_assets/dodge_assets/art/enemySwimming_2.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/dodge_assets/dodge_assets/art/enemyFlyingAlt_1.png" type="Texture" id=5]
 [ext_resource path="res://assets/dodge_assets/dodge_assets/art/enemyWalking_1.png" type="Texture" id=6]
 [ext_resource path="res://Monstres.gd" type="Script" id=7]
-[ext_resource path="res://Poyo.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/kirbo/kirbo2.png" type="Texture" id=9]
 [ext_resource path="res://assets/kirbo/kirbo.png" type="Texture" id=10]
 [ext_resource path="res://assets/kirbo/kirbo3.png" type="Texture" id=11]
@@ -53,7 +52,7 @@ script = ExtResource( 7 )
 scale = Vector2( 0.18, 0.18 )
 frames = SubResource( 1 )
 animation = "voler"
-frame = 5
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -61,9 +60,5 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-
-[node name="KirboDie" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = 1.0
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
