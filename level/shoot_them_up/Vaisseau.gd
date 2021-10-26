@@ -41,6 +41,6 @@ func _on_Vaisseau_body_entered(body):
 	var vie =get_parent().vie
 	hide()
 	emit_signal("hit")
-	if vie>0:
-		yield(get_tree().create_timer(1),"timeout")
+	if vie>1:
+		yield(get_tree().create_timer(0.3),"timeout")
 		show()

@@ -53,7 +53,6 @@ func get_total_margin():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print("position")
 	if not _init: init()
 	
 	if _last_ach != achievement or _last_height != height:

@@ -93,6 +93,7 @@ func _on_Timer_timeout():
 	
 func game_over():
 	vie-=1
+	$HID.remove_life()
 	if vie<1:
 		$AudioStreamPlayer.stop()
 		get_tree().call_group("asteroide", "queue_free")
