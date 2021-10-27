@@ -43,11 +43,13 @@ func _process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 20, screen_size.x-40)
 	position.y = clamp(position.y, 20, screen_size.y-40)
+	
+	#if velocity.x != 0 :
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "marcher"
 		$AnimatedSprite.flip_v = false
 		$AnimatedSprite.flip_h = velocity.x < 0
-		if velocity.x<0:
+		if velocity.x<0 :
 			$Weapon/HitBox.position.x= -55
 			$Weapon/AnimatedSprite.position.x= -55
 		if velocity.x>0 :

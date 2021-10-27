@@ -1,6 +1,7 @@
 extends Node
 
 var score=0
+var time=0
 export (PackedScene) var Monstres
 
 # Called when the node enters the scene tree for the first time.
@@ -11,6 +12,7 @@ func new_game():
 	$Music.play()
 	$Lonk/AnimationPlayer.play("AnimLonk")
 	score = 0
+	time=0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 	$Hud/StartButton.hide()
@@ -18,6 +20,8 @@ func new_game():
 	$Hud.show_message("Get Ready")
 
 func kirbo_die():
+	score+=1
+	$Hud.update_score(score)
 	$KirboDie.play()
 
 func _on_StartTimer_timeout():
@@ -25,8 +29,8 @@ func _on_StartTimer_timeout():
 	$ScoreTimer.start()
 
 func _on_ScoreTimer_timeout():
-	score += 1
-	$Hud.update_score(score)
+	time += 1
+	$Hud.update_timer(time)
 
 func _on_MobTimer_timeout():
 	# Choose a random location on Path2D.

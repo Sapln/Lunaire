@@ -14,14 +14,8 @@
 [ext_resource path="res://RPG/assets/kirbo/kirbo6.png" type="Texture" id=13]
 [ext_resource path="res://RPG/assets/kirbo/kirbo4.png" type="Texture" id=14]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "fly",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "swim",
@@ -35,6 +29,11 @@ animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "voler",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "fly",
 "speed": 8.0
 } ]
 

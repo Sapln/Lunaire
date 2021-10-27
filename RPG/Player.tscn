@@ -14,20 +14,20 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "marcher",
-"speed": 8.0
+"name": "attaquer",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "sauter",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "attaquer",
-"speed": 5.0
+"name": "marcher",
+"speed": 8.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -38,7 +38,7 @@ height = 26.5587
 extents = Vector2( 510.998, 302.302 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 38.5327, 49.3787 )
+extents = Vector2( 37, 49.3787 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "New Anim"

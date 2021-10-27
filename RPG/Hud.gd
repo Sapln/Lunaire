@@ -21,6 +21,9 @@ func show_game_over():
 func update_score(score):
 	$ScoreLabel.text = str(score)
 
+func update_timer(timer):
+	$TimeLabel.text=str(timer)
+
 func _on_StartButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_game")

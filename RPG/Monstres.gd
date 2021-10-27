@@ -11,6 +11,7 @@ func _ready():
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
-func handle_hit():
+func handle_hit(x,y):
 	get_parent().kirbo_die()
-	queue_free()
+	linear_velocity = Vector2((position.x-x), (position.y-y)) * 8
+	#queue_free()
